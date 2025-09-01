@@ -33,7 +33,11 @@ h1 {
 
 .tarjeta img {
     width: 100%;
+    height: auto;   /* mantiene proporción */
+    max-width: 200px; /* evita que se hagan gigantes en pantallas grandes */
     border-radius: 200px;
+    margin: 0 auto; /* centra la imagen */
+    display: block;
 }
 
 .tarjeta h2 {
@@ -43,7 +47,7 @@ h1 {
 
 .tarjeta p {
     color: black ;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -58,4 +62,44 @@ h1 {
 
 #Milo {
     border: 3px solid #b14750;
+}
+
+
+/* Teléfonos (pantallas muy chicas) */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .tarjeta {
+        width: 100%;  /* tarjetas ocupan todo el ancho */
+        max-width: 300px;
+    }
+
+    .tarjeta p {
+        font-size: 14px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 991px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .tarjeta {
+        width: 45%; /* dos tarjetas por fila */
+    }
+}
+
+/* PC grandes */
+@media (min-width: 992px) {
+    .tarjeta {
+        width: 250px; /* como ya tenía*/
+    }
 }
